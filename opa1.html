@@ -5,17 +5,31 @@
     <meta charset="utf-8">
     <meta name="vievport" content="width=divice-width, inital-scale=1.0">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Подключаем Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- Подключаем Wow.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 </head>
 
 <body>
     <header>
             <div class="hat">
                 <nav class="hat-nav-item">
-                    <a href="" class="hat-item">Все туры</a>
-                    <a href="" class="hat-item">Контакты</a>
-                    <a href="" class="hat-item">Отзывы</a>
+                    <a href="" class="hat-item wow animate__animated animate__fadeIn"
+                        data-wow-duration="1s"
+                        data-wow-delay="0.7s">
+                        Все туры</a>
+                    <a href="" class="hat-item wow animate__animated animate__slideInUp"
+                        data-wow-duration="1s"
+                        data-wow-delay="0.4s">
+                        Контакты</a>
+                    <a href="" class="hat-item wow animate__animated animate__fadeIn"
+                        data-wow-duration="1s"
+                        data-wow-delay="0.7s">Отзывы</a>
                 </nav>
-                
+
                 <h1 class="hat-heading">Открой для себя новую <br> Ирландию</h1>
                 <p class="hat-subtitle">Авторские туры по экзотическим уголкам от Ивана Иванова</p>
 
@@ -36,8 +50,10 @@
                         <a href="#" class="hat-social-link"><img src=./image/vk.svg></img></a>
                     </div>
 
-                    <div class="hat-images"> 
-                        <div class="hat-image">
+                    <div class="hat-images">
+                        <div class="hat-image wow animate__animated animate__fadeInLeft"
+                        data-wow-duration="1s"
+                        data-wow-delay="0.7s">
                             <div class="hat-image-block">
                                 <h3 class="hat-number-image">02</h3>
                                 <div class="hat-image-text">
@@ -47,7 +63,9 @@
                             </div>
                         </div>
                         
-                        <div class="hat-image">
+                        <div class="hat-image wow animate__animated animate__fadeInUp"
+                        data-wow-duration="1s"
+                        data-wow-delay="0.7s">
                             <div class="hat-image-block">
                                 <h3 class="hat-number-image">03</h3>
                                 <div class="hat-image-text">
@@ -57,7 +75,9 @@
                             </div>
                         </div>
 
-                        <div class="hat-image">
+                        <div class="hat-image wow animate__animated animate__fadeInRight"
+                        data-wow-duration="1s"
+                        data-wow-delay="0.7s">
                             <div class="hat-image-block">
                                 <h3 class="hat-number-image">04</h3>
                                 <div class="hat-image-text">
@@ -72,26 +92,38 @@
     </header>
 
     <div class="card-tours">
-        <div class="card-date">
+        <div class="card-date wow animate__animated animate__fadeInLeft"
+                            data-wow-duration="0.8s"
+                            data-wow-delay="0.2s">
             <p class="card-title">10-24</p>
             <span class="card-subtitle">апреля</span>
             <p class="card-in-text">Большое ущелье на осторовах Гавайи</p>
         </div>
         <div class="card-text">
-            <h2 class="tours">Посмотрите все направления туров</h2>
-            <p class="discription">Берега океанов и дикие пляжи с редкими породами деревьев. 
-            Местная архитектура и первозданный вид дикой природы</p>
-            <button class="button-watch">Смотреть все</button>
+            <div class="card-text-descr wow animate__animated animate__fadeInDown"
+                            data-wow-duration="0.9s"
+                            data-wow-delay="0.4s">
+                <h2 class="tours">Посмотрите все направления туров</h2>
+                <p class="discription">Берега океанов и дикие пляжи с редкими породами деревьев. 
+                Местная архитектура и первозданный вид дикой природы</p>
+            </div>
+            <button class="button-watch wow animate__animated animate__bounceIn"
+                            data-wow-duration="0.9s"
+                            data-wow-delay="0.6s">Смотреть все</button>
         </div>
     </div>
     
     <div class="block-prime-register">
-        <div class="block-reg">
+        <div class="block-reg wow animate__animated animate__zoomInLeft"
+                data-wow-duration="0.8s"
+                data-wow-delay="0.7s">
             <h2 class="block-register-title">Оставьте заявку <br> на бесплатную <br> консультацию</h2>
             <p class="block-register-subtitle">Мы перезвоним вам в <br> ближайшее время</p>
         </div>
         
-        <div class="block-request">
+        <div class="block-request wow animate__animated animate__zoomInRight"
+                data-wow-duration="0.8s"
+                data-wow-delay="0.9s">
             <div class="block-application"><h2>Оставить заявку можно здесь:</h2></div>
                 <div class="block-all">
                     <div class="block-number"><p>+7 ( _ _ _ ) _ _ _ - _ _ - _ _</p></div>
@@ -104,12 +136,16 @@
 
 
     <div class="card-reviews">
-        <div class="card-reviews-relax">
+        <div class="card-reviews-relax wow animate__animated animate__fadeInRight"
+                data-wow-duration="0.8s"
+                data-wow-delay="0.4s">
             <p class="card-reviews-title">Отзыв</p>
             <span class="card-reviews-subtitle">Елена Иванова</span>
             <p class="card-reviews-in-text">Пожалуй, это был самый лучший отпуск в моей жизни...</p>
         </div>
-        <div class="card-reviews-text">
+        <div class="card-reviews-text wow animate__animated animate__fadeInLeft"
+                data-wow-duration="0.8s"
+                data-wow-delay="0.4s">
             <h2 class="reviews-tours">Что пишут участники наших путешествий</h2>
             <p class="reviews-discription">87% участников приходят по личной рекомендации от друзей. 
                 А каждый 4-ый путешествует с нами больше двух раз!</p>
@@ -117,18 +153,76 @@
         </div>
     </div>
 
+    <h1 class="gallery-text">Также фотографии с наших туров</h1>
+        <div class="gallery-grid">
+        <div class="gallery-item wow animate__animated animate__fadeInUp"
+                data-wow-duration="0.8s"
+                data-wow-delay="0s">
+            <img src="./image/m1.jpg">
+        </div>
+        <div class="gallery-item wow animate__animated animate__fadeInUp"
+                data-wow-duration="0.8s"
+                data-wow-delay="0.2s">
+            <img src="./image/m2.jpg">
+        </div>
+        <div class="gallery-item wow animate__animated animate__fadeInUp"
+                data-wow-duration="0.8s"
+                data-wow-delay="0.4s">
+            <img src="./image/m3.jpg">
+        </div>
+        <div class="gallery-item wow animate__animated animate__fadeInUp"
+                data-wow-duration="0.8s"
+                data-wow-delay="0.6s">
+            <img src="./image/m4.jpg">
+        </div>
+        <div class="gallery-item wow animate__animated animate__fadeInUp"
+                data-wow-duration="0.8s"
+                data-wow-delay="0.8s">
+            <img src="./image/m5.jpg">
+        </div>
+        <div class="gallery-item wow animate__animated animate__fadeInUp"
+                data-wow-duration="0.8s"
+                data-wow-delay="1s">
+            <img src="./image/m6.jpg">
+        </div>
+    </div>
+
     <footer>
-        <div class="footer">
-            <img class="logo" src="./image/blackLogo.svg" alt="logo">
+        <div class="footer wow animate__animated animate__fadeInUp"
+                            data-wow-duration="0.9s">
+            <img class="logo wow animate__animated animate__bounceIn"
+                            data-wow-duration="0.5s"
+                            data-wow-iteration="infinite"
+                            src="./image/blackLogo.svg" alt="logo">
             <div class="footer-links">Политика<br> конфиденциальности</div>
             <div class="footer-links">Соглашение на обработку <br> персональных данных</div>
             <div class="social">
-            <div><a href="#" class="footer-links"><img src=./image/youtube-footer.svg></img></a></div>
-            <div><a href="#" class="footer-links"><img src=./image/facebook-footer.svg></img></a></div>
-            <div><a href="#" class="footer-links"><img src=./image/twitter-footer.svg></img></a></div>
-            <div><a href="#" class="footer-links"><img src=./image/vk-footer.svg></img></a></div>
-            </div>  
+            <div><a href="#" class="footer-links wow animate__animated animate__bounceInUp"
+                            data-wow-duration="1s">
+                            <img src=./image/youtube-footer.svg></img></a></div>
+            <div><a href="#" class="footer-links wow animate__animated animate__bounceInUp"
+                            data-wow-duration="2s">
+                            <img src=./image/facebook-footer.svg></img></a></div>
+            <div><a href="#" class="footer-links wow animate__animated animate__bounceInUp"
+                            data-wow-duration="1.5s"
+                            data-wow-delay="1s">
+                            <img src=./image/twitter-footer.svg></img></a></div>
+            <div><a href="#" class="footer-links wow animate__animated animate__bounceInUp"
+                            data-wow-duration="3s"
+                            data-wow-delay="1s">
+                            <img src=./image/vk-footer.svg></img></a></div>
+            </div>
         </div>
     </footer>
+
+    <script>
+        new WOW({
+            boxClass: 'wow',
+            animateClass: 'animated',
+            offset: 0,
+            mobile: true,
+            live: true
+        }).init();
+    </script>
 </body>
 </html>
