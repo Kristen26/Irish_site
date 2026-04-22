@@ -1,5 +1,9 @@
+<?php
+session_start();
+require "db.php";
+?>
 <!DOCTYPE html>
-<html rang="ru">
+<html lang="ru">
 
 <head>
     <meta charset="utf-8">
@@ -28,15 +32,21 @@
                     <a href="" class="hat-item wow animate__animated animate__fadeIn"
                         data-wow-duration="1s"
                         data-wow-delay="0.7s">Отзывы</a>
+                    <?php if (!empty($_SESSION['user_id'])): ?>
+                        <a href="dashboard.php" class="hat-item wow animate__animated animate__fadeIn"
+                            data-wow-duration="1s"
+                            data-wow-delay="0.7s">Таблицы</a>
+                        <a href="logout.php" class="hat-item wow animate__animated animate__fadeIn"
+                            data-wow-duration="1s"
+                            data-wow-delay="0.7s">Выйти</a>
+                    <?php endif; ?>
                 </nav>
 
                 <h1 class="hat-heading">Открой для себя новую <br> Ирландию</h1>
                 <p class="hat-subtitle">Авторские туры по экзотическим уголкам от Ивана Иванова</p>
 
                 <div class="hat-buttons">
-                    <form action="https://horo.mail.ru/" target="_blank">
-                        <button class="hat-btn">Оставить заявку</button>
-                    </form>
+                    <button class="hat-btn" onclick="openSidebar()">Оставить заявку</button>
                     <button class="hat-btn-play"><img src = "./image/play.svg"></img></button>
                     <span class="hat-btn-text">Посмотрите<br> видео-отчет<br> 2018-2019</span>
                 </div>
@@ -224,5 +234,59 @@
             live: true
         }).init();
     </script>
+
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <span class="close-btn" onclick="closeSidebar()">&times;</span>
+            
+            <h2>Вход / Регистрация</h2>
+
+            <?php if (($_GET['error'] ?? '') === 'auth'): ?>
+                <div style="margin: 10px 0; padding: 10px 12px; border-radius: 10px; background:#fee2e2; border:1px solid #fecaca; color:#7f1d1d;">
+                    Логин или пароль не совпадает
+                </div>
+            <?php elseif (($_GET['error'] ?? '') === 'server'): ?>
+                <div style="margin: 10px 0; padding: 10px 12px; border-radius: 10px; background:#fff7ed; border:1px solid #fed7aa; color:#7c2d12;">
+                    Ошибка сервера. Попробуйте позже
+                </div>
+            <?php elseif (($_GET['error'] ?? '') === 'exists'): ?>
+                <div style="margin: 10px 0; padding: 10px 12px; border-radius: 10px; background:#fff7ed; border:1px solid #fed7aa; color:#7c2d12;">
+                    Такой логин уже занят
+                </div>
+            <?php elseif (($_GET['ok'] ?? '') === 'reg'): ?>
+                <div style="margin: 10px 0; padding: 10px 12px; border-radius: 10px; background:#dcfce7; border:1px solid #bbf7d0; color:#14532d;">
+                    Регистрация успешна. Теперь можно войти
+                </div>
+            <?php endif; ?>
+            
+            <form action="login.php" method="POST">
+                <input class="sidebar-input" type="text" name="login" placeholder="Логин" required>
+                <input class="sidebar-input" type="password" name="pasv" placeholder="Пароль" required>
+                <button class="sidebar-btn" type="submit">Войти</button>
+                <button class="sidebar-btn" type="submit" formaction="register.php">Регистрация</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+    function openSidebar() {
+        document.getElementById("sidebar").classList.add("active");
+    }
+
+    function closeSidebar() {
+        document.getElementById("sidebar").classList.remove("active");
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const params = new URLSearchParams(window.location.search);
+        if (params.has("error") || params.has("ok")) {
+            openSidebar();
+        }
+    });
+
+    function goToNextPage() {
+        window.location.href = "page2.html";
+    }
+</script>
 </body>
 </html>
