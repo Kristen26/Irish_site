@@ -1,7 +1,7 @@
 <?php
-require_once "auth.php";
+require_once __DIR__ . "/../src/auth.php";
 require_login();
-require_once "db.php";
+require_once __DIR__ . "/../src/db.php";
 
 $role = $_SESSION['role'] ?? 'user';
 

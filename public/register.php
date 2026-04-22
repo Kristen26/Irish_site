@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "db.php";
+require __DIR__ . "/../src/db.php";
 
 $login = trim($_POST['login'] ?? '');
 $pass = trim($_POST['pasv'] ?? '');
